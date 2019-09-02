@@ -1,0 +1,82 @@
+<dir-main-head></dir-main-head>
+<div class="containerContact">
+	<br>
+	<div class="contactProfile">
+		<br>
+		<span>Thanks for stopping by!</span>
+		<br>
+		<br>
+		<img class="contact-pic" src="Images/Porter,-Jeremy-01s.jpg" style="width:150px; border: 2px solid black;">
+		<br>
+		<span>My e-mail: Jtporter9@gmail.com</span>
+		<br>
+		<span>My number: 801-623-7839</span>
+		<br>
+		<br>
+	</div>
+	<br>
+	<span class="contactProfile" style="padding:5px;">To e-mail me, click the icon.</span>
+	<br>
+	<br>
+	<div ng-show="showQuestion">
+		<br>
+		<a href="mailto:jtporter9@gmail.com">
+			<!-- <div ng-click="leaveComment()"></div> -->
+			<img class="email-pic2" src="Images/download.png" style="width:60px;">
+		</a>
+		<!-- <br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> -->
+	</div>
+	<div ng-show="showForm" class="email-form">
+		<img class="email-pic" src="Images/download.png" style="width:60px;">
+		<form name="newCommentForm">
+			<input ng-model="emailAddress" type="email" placeholder="E-mail address...">
+			<input ng-model="subject" type="text" placeholder="Subject..">
+			<br>
+			<br>
+			<textarea ng-model="message" placeholder="Message here..." style="height:150px; width:80%;"></textarea>
+			<br>
+			</span>
+			<hr>
+			<span class="contact-info">Send yourself a copy:</span>
+			<input type="radio">
+			<button ng-click="cancelComment()">Cancel</button>
+			<button ng-click="submitComment()">Submit</button>
+			<br>
+		</form>
+	</div>
+	<br>
+	<div class="message-sent" ng-show="messageSent">
+		<img ng-click="closeSent()" class="close-sent" src="Images/close.jpeg">
+		<span>
+			{{messageSent}}
+			</span>
+	</div>
+	<div class="message-sent" ng-show="messageFailed">
+		<img ng-click="closeSent()" class="close-sent" src="Images/close.jpeg">
+		<span>
+			{{messageFailedText}}
+			</span>
+	</div>
+	<div class="message-sent" ng-show="messageFailed2">
+		<img ng-click="closeSent()" class="close-sent" src="Images/close.jpeg">
+		<span>
+			{{messageFailedText2}}
+			</span>
+	</div>
+	<div class="transparent-box">
+		<dir-social-media></dir-social-media>
+	</div>
+	<br>
+</div>

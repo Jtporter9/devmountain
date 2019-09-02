@@ -1,0 +1,24 @@
+{
+  "name": "J-Tanner-Porter-no-server-project",
+  "homepage": "https://github.com/Jtporter9/J-Tanner-Porter-no-server-project",
+  "authors": [
+    "J. Tanner Porter <jtporter9@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "less": "~2.5.3",
+    "angularLocalStorage": "ngStorage#~0.3.2"
+  }
+}

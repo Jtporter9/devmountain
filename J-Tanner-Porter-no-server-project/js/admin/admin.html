@@ -1,0 +1,48 @@
+<dir-main-head></dir-main-head>
+
+<h1 style="color: white;" class="big-J">Welcome, to your Admin page Tanner</h1>
+<br>
+<br>
+<div class="adminContainer">
+	<div class="adminComments">
+		<span style="font-size:20px; font-weight: bold;">Comments:</span>
+		<hr>
+
+		<div ng-mouseover="commentHoverDelete()" ng-mouseleave="commentHoverLeave()" class="admin-view-comments" ng-repeat="comment in comments">
+			<ul>
+				<li>{{comment.name}}
+					<br> {{comment.email}}</li>
+				<br>
+				<span>{{comment.comment}}</span>
+				<br>
+				<br>
+				<span> Response wanted: {{comment.answer}}</span>
+				<br>
+				<br>
+				<a href="" ng-show="showDeleteComment" ng-click="deleteComment(comment)" style="color:red;">Delete</a>
+				<a href="" ng-show="showDeleteComment" style="color:black; margin: 0 5%;">Reply</a>
+			</ul>
+		</div>
+
+	</div>
+	<div class="adminEmails">
+		<span style="font-size:20px; font-weight: bold;">Emails:</span>
+		<hr>
+		<div ng-mouseover="emailHoverDelete()" ng-mouseleave="emailHoverLeave()" class="admin-view-comments" ng-repeat="email in emails">
+		<ul>
+			<li>From: <br><hr> {{email.email}}
+				<br>
+				<br> Subject: {{email.subject}}</li>
+			<br>
+			Message:
+			<hr>
+			<p>{{email.message}}</p>
+		<a href=" " ng-show="showDelete " ng-click="deleteEmail(email) " style="color:red; ">Delete</a>
+		<a href=" " ng-show="showDelete "  style="color:black; margin: 0 5%; ">Reply</a>
+		</ul>
+	</div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<br><br>

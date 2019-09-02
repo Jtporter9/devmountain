@@ -1,0 +1,140 @@
+<dir-main-head>
+</dir-main-head>
+
+
+<h1 class="contact-info">Some of my work:</h1>
+<br>
+<hr>
+<br>
+<div class="containerPortfolio">
+    <div class="titlesPortfolio">
+        <h3>Description:</h3>
+        <h3>Sites:</h3>
+    </div>
+    <div class="sites">
+        <div class="descriptionContainers">
+            <li>
+                <span class="contact-info">Wordwire.me</span>
+                <hr>
+                <p class="paraDes" style="color:white;"> This is real time chat app that I created using the MEAN stack. I built this app in two weeks as part of a personal project while in attendance at
+                    <a style="color:grey;" href="https://devmounta.in/">Dev Mountain</a>. In this app I used many a lot of
+                    fun things that help me learn a lot about the MEAN (Mongodb, Express, Angular, Node) stack, and in particular
+                    about using models in the back end and how to reference to each other. I used 3 different very important
+                    and key models in this project. Number one was 'Users', two was 'Conversations', and three was 'Messages',
+                    building the models and relationships for these was an intersting task. I also used Socket.io to help
+                    the app become a real time messaging app. If I would have had more time I would have liked to implement,
+                    file upload via Amazon S3, and a better notification system to notify you when you get a message. I also
+                    have plans to make this into a mobile app using Ionic.
+                </p>
+            </li>
+        </div>
+        <div class="siteContainer">
+            <a href="http://wordwire.me">
+                <img src="Images/Screen Shot 2015-12-31 at 2.35.39 PM.png" style="width:100%; border: 1px solid white; margin-top:9%;">
+            </a>
+            <p class="paraDes" style="color:white;background: rgba(0,0,0,0.6); border-radius:5px; ">Click above</p>
+        </div>
+    </div>
+    <div class="sites">
+        <div class="descriptionContainers">
+            <li>
+                <span class="contact-info">Task Manager</span>
+                <hr>
+                <p class="paraDes" style="color:white;">
+                  This is a simple but very functional task editor that I made in the begining of my time at Devmountain. It uses AngularJS, with your basic Html, and Css. This app allows you to create, edit, delete, and manage cards for a more organized daily effort. You can move cards from To do, to Doing, then into the done section. This project shows my comprehension of simple javascript functions and how to manipulate data using objects, and arrays. This was a fun project build on a saturday in october in 2015.
+                </p>
+            </li>
+        </div>
+        <div class="siteContainer">
+            <a href="http://jtstaskeditor.azurewebsites.net/">
+                <img src="Images/taskEditor.png" style="width:100%; border: 1px solid white; margin-top:6%;">
+            </a>
+            <p class="paraDes" style="color:white;">Click above</p>
+        </div>
+    </div>
+    <div class="sites">
+        <div class="descriptionContainers">
+            <li>
+                <span class="contact-info">My quote book</span>
+                <hr>
+                <p class="paraDes" style="color:white;">
+                  This is a quote book with examples of local storage and some fun functionality. The app is built to store quote. First off it used localStorage to keep all of the quotes persisting, and saving. This uses AngularJS, with basic HTMl and CSS. This shows another example of basic JavaScript. 
+                </p>
+            </li>
+        </div>
+        <div class="siteContainer">
+            <a href="http://jtsquotebook.azurewebsites.net/">
+                <img src="Images/quoteBook.png" style="width:100%; border: 1px solid white; margin-top:9%;">
+            </a>
+            <p class="paraDes" style="color:white;">Click above</p>
+        </div>
+    </div>
+    <!-- <div class="sites">
+        <div class="descriptionContainers">
+            <li>
+                <span class="contact-info">This is a Twitter Clone Project to immitate twitter using Jquery</span>
+                <hr>
+                <p class="paraDes" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat sapien posuere vestibulum tristique.
+                    Sed molestie metus massa, in egestas ante feugiat at. Aenean et nisl sapien. Etiam tincidunt mattis tellus
+                    at interdum. Mauris varius sapien non faucibus tincidunt. Duis tempus posuere massa, in ultrices nisi
+                    placerat ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Mauris rhoncus ex sem, id molestie felis volutpat sed.</p>
+            </li>
+        </div>
+        <div class="siteContainer">
+            <a href="http://jtstwitterclone.azurewebsites.net/">
+                <img src="Images/twitterClone.png" style="width:100%; border: 1px solid white; margin-top:8%;">
+            </a>
+            <p class="paraDes" style="color:white;">Click above</p>
+        </div>
+    </div> -->
+</div>
+<div class="container">
+
+    <hr>
+    <div ng-show="showQuestion">
+        <span class="contact-info">Want to leave a comment?</span>
+        <br>
+        <br>
+        <button ng-click="leaveComment()">Leave comment</button>
+        <br>
+        <br>
+    </div>
+    <form ng-show="showForm" name="newCommentForm">
+        <input ng-model="name" type="text" placeholder="Your name.." required>
+        <input ng-model="email" type="text" placeholder="Your email.." required>
+        <br>
+        <br>
+        <textarea ng-model="comment" placeholder="Your comment here... Thanks" cols="70" rows="8" required></textarea>
+        <br>
+        <span class="contact-info">Would you like me to respond back to your question/comment? Yes?
+		<input ng-model="answer" type="radio" value="Yes"> No?
+				<input  ng-model="answer" type="radio" value="No">
+	</span>
+        <button ng-click="cancelComment()">Cancel</button>
+        <button ng-disabled="newCommentForm.$invalid" ng-click="submitComment()">Submit</button>
+        <br>
+        <br>
+        <span style="color:red;background:rgba(255,255,255,0.1);">{{error}}</span>
+        <hr>
+        <br>
+    </form>
+    <div class="comments" ng-repeat="comment in comments">
+        <ul>
+            <li class="contact-info">{{comment.name}}
+                <br> {{comment.email}}</li>
+            <br>
+            <span class="contact-info">{{comment.comment}}</span>
+            <br>
+            <br>
+            <span class="contact-info"> Response wanted: {{comment.answer}}</span>
+            <br>
+        </ul>
+    </div>
+    <br>
+    <span class="contact-info">Thank you for your comments!</span>
+    <br>
+</div>
+<br>
+<hr>
+<dir-social-media></dir-social-media>
